@@ -1,0 +1,40 @@
+{
+    "name": "FlappyControl",
+    "maps": [
+        {
+            "name": "Flight",
+            "id": "6c43b2b4-001b-45d0-81a2-4cad969ecc31",
+            "actions": [
+                {
+                    "name": "Jump",
+                    "type": "Button",
+                    "id": "4965f36b-7c4d-4be0-97e6-720a3457e62a",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "32d8ffc3-1017-4a33-b9c7-306094501674",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard",
+                    "action": "Jump",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": [
+        {
+            "name": "Keyboard",
+            "bindingGroup": "Keyboard",
+            "devices": []
+        }
+    ]
+}

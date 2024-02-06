@@ -42,11 +42,22 @@ public class PoolScript : MonoBehaviour
     {
         if (availableObjectList.Count != 0)
         {
-            return availableObjectList[0];
+            GameObject requestObject = availableObjectList[0];
+            availableObjectList.RemoveAt(0);
+            activeObjectList.Add(requestObject);
+            return requestObject;
         }
         else
         {
-            return null;
+            CreateObject(1);        
+            return RequestObject();
         }
+    }
+
+    public void DespawnObject(GameObject objectToDespawn) 
+    {
+        objectToDespawn.SetActive(false);
+        availableObjectList.Add(objectToDespawn);
+        activeObjectList.Remove(objectToDespawn);
     }
 }
