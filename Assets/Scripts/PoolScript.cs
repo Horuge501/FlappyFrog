@@ -21,11 +21,6 @@ public class PoolScript : MonoBehaviour
     {
         CreateObject(startingNumberofObjects);
     }
-    
-    void Update()
-    {
-        
-    }
 
     private void CreateObject(int numberOfObjects)
     {

@@ -5,15 +5,30 @@ using UnityEngine.InputSystem;
 
 public class FlappyPlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private FlappyControl controller;
+
+    [SerializeField] private float speed = 1.5f;
+    [SerializeField] private float rotationSpeed = 10f;
+
+    private Rigidbody2D rb;
+
     void Start()
     {
-        
+        controller = new FlappyControl();
+        controller.Enable();
+        rb = GetComponent<Rigidbody2D>();
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (controller.Flight.Jump.ReadValue<float>() == 1)
+        {
+            rb.velocity = Vector2.up * speed;
+        }
+    }
+
+    private void FixedUpdate()
+    {
+        transform.rotation = Quaternion.Euler(0, 0, rb.velocity.y * rotationSpeed);
     }
 }
