@@ -40,6 +40,7 @@ public class PoolScript : MonoBehaviour
             GameObject requestObject = availableObjectList[0];
             availableObjectList.RemoveAt(0);
             activeObjectList.Add(requestObject);
+            requestObject.SetActive(true);
             return requestObject;
         }
         else

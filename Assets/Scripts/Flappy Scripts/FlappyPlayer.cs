@@ -31,4 +31,9 @@ public class FlappyPlayer : MonoBehaviour
     {
         transform.rotation = Quaternion.Euler(0, 0, rb.velocity.y * rotationSpeed);
     }
+
+    private void OnTriggerEnter2D(Collider2D collision) 
+    {
+        Destroy(gameObject);
+    }
 }
